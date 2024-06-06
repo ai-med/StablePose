@@ -29,12 +29,6 @@ The overall structure of Stable-Pose:
 - [Acknowledgments](#acknowledgments)
 - [References](#references)
 
-# TODO
-- [x] release training codes
-- [x] release test codes
-- [ ] release scripts for preparing video datasets
-- [ ] release trained models
-- [ ] add gradio app
 
 # Installation
 To get started, first prepare the required environment:
