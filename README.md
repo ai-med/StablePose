@@ -1,7 +1,7 @@
 # Stable-Pose
 ---
-Official implementation of Stable-Pose: Leveraging Transformers for
-Pose-Guided Text-to-Image Generation.
+Official implementation of [Stable-Pose: Leveraging Transformers for Pose-Guided Text-to-Image Generation](https://arxiv.org/abs/2406.02485).
+
 <p align="center">
   <img src="assets/fig1.png" alt="Figure 1" height="90%" width="90%">
 </p>
@@ -63,8 +63,9 @@ We put all the pretrained models we need under 'models' directory:
 You may download the Stable Diffusion model from [Hugging Face](https://huggingface.co/runwayml/stable-diffusion-v1-5) and pose esitimator from [HumanSD](https://github.com/IDEA-Research/HumanSD). 
 Note that ```init_stable_pose.ckpt``` is the initialized model for Stable-Pose, you might refer to [Usage](#usage) for details.
 
+
 ## Data
-We trained and evaluated on Human-Art [3] and Laion-Human [2], where we follow [HumanSD](https://github.com/IDEA-Research/HumanSD/tree/main) to download and structure the data. Further, we evaluated on three video datasets: UBC Fashion [4], DAVIS [5], and Dance Track [6], where we extracted video frames and built datasets to test (Codes for preparing video datasets will be released soon). The data path is specified in config files.  
+We trained and evaluated on [Human-Art](https://idea-research.github.io/HumanArt/) and [Laion-Human](https://arxiv.org/pdf/2304.04269), where we follow [HumanSD](https://github.com/IDEA-Research/HumanSD/tree/main) to download and structure the data. Further, we evaluated on three video datasets:  [UBC Fashion](https://arxiv.org/abs/1910.09139), [DAVIS](https://www.cv-foundation.org/openaccess/content_cvpr_2016/papers/Perazzi_A_Benchmark_Dataset_CVPR_2016_paper.pdf), and [Dance Track](https://openaccess.thecvf.com/content/CVPR2022/papers/Sun_DanceTrack_Multi-Object_Tracking_in_Uniform_Appearance_and_Diverse_Motion_CVPR_2022_paper.pdf), where we extracted video frames and built datasets to test (Codes for preparing video datasets will be released soon). The data path is specified in config files.  
 
 ## Configs
 Config files are structured as:
@@ -101,7 +102,7 @@ Evaluation results are also stored similarly:
 
 # Usage
 We've released training and test codes with sample commands.
-Before training, you might need to initialize the Stable-Pose model with weights of Stable Diffusion model, following ControlNet [1]:
+Before training, you might need to initialize the Stable-Pose model with weights of Stable Diffusion model, following [ControlNet](https://github.com/lllyasviel/ControlNet):
 ```
 python prepare_weights.py models/v1-5-pruned.ckpt configs/stable_pose/humanart.yaml models/init_stable_pose.ckpt
 ```
@@ -119,18 +120,20 @@ python eval_quality.py
 ```
 Note that for Human-Art, we followed HumanSD and evaluated the quality on each scenario (e.g. cartoon, dance), and the json files are provided in ```val_jsons``` directory.
 
+
+
+# Citation
+
+If you find StablePose useful in your research, please cite our paper:
+
+```bibtex
+@article{stablepose2024,
+    author = {Jiajun Wang, Morteza Ghahremani, Yitong Li, Björn Ommer, Christian Wachinger},
+    title = {Stable-Pose: Leveraging Transformers for Pose-Guided Text-to-Image Generation},
+    journal = {	arXiv:2406.02485},
+    year = {2024},
+}
+```
+
 # Acknowledgments
 This repository is built upon [ControlNet](https://github.com/lllyasviel/ControlNet) and [HumanSD](https://github.com/IDEA-Research/HumanSD),  thanks to their great work!
-
-# References
-[1] Zhang, Lvmin, Anyi Rao, and Maneesh Agrawala. "Adding conditional control to text-to-image diffusion models." Proceedings of the IEEE/CVF International Conference on Computer Vision. 2023.
-
-[2] Ju, Xuan, et al. "HumanSD: A Native Skeleton-Guided Diffusion Model for Human Image Generation." arXiv preprint arXiv:2304.04269 (2023).
-
-[3] Ju, Xuan, et al. "Human-Art: A Versatile Human-Centric Dataset Bridging Natural and Artificial Scenes." Proceedings of the IEEE/CVF Conference on Computer Vision and Pattern Recognition. 2023.
-
-[4] Zablotskaia, Polina, et al. "Dwnet: Dense warp-based network for pose-guided human video generation." arXiv preprint arXiv:1910.09139 (2019).
-
-[5] Perazzi, Federico, et al. "A benchmark dataset and evaluation methodology for video object segmentation." Proceedings of the IEEE conference on computer vision and pattern recognition. 2016.
-
-[6] Sun, Peize, et al. "Dancetrack: Multi-object tracking in uniform appearance and diverse motion." Proceedings of the IEEE/CVF Conference on Computer Vision and Pattern Recognition. 2022.
