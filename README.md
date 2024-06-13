@@ -17,7 +17,6 @@ The overall structure of Stable-Pose:
 
 **Table of Contents**
 - [Stable-Pose](#stable-pose)
-- [TODO](#todo)
 - [Installation](#installation)
 - [File structure](#file-structure)
   - [Model and Checkpoints](#model-and-checkpoints)
