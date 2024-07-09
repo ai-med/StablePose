@@ -25,8 +25,8 @@ The overall structure of Stable-Pose:
   - [Checkpoints and logs](#checkpoints-and-logs)
   - [Evaluation results](#evaluation-results)
 - [Usage](#usage)
+- [Citation](#citation)
 - [Acknowledgments](#acknowledgments)
-- [References](#references)
 
 
 # Installation
@@ -82,6 +82,7 @@ Checkpoints and training logs for stable-pose are stored under 'experiments' dir
             |-- log_images
             |-- final.pth
 ```
+We provided the trained Stable-Pose checkpoints on Human-Art and LAION-Human dataset here: [Google Drive](https://drive.google.com/drive/folders/19k6khtQlaKrJDGTGxELs3l-Gzsi2jYpV?usp=drive_link).
 
 ## Evaluation results
 Evaluation results are also stored similarly:
