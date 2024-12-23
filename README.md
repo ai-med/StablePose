@@ -124,7 +124,7 @@ If you find StablePose useful in your research, please cite our paper:
 @article{stablepose2024,
     author = {Jiajun Wang, Morteza Ghahremani, Yitong Li, Björn Ommer, Christian Wachinger},
     title = {Stable-Pose: Leveraging Transformers for Pose-Guided Text-to-Image Generation},
-    journal = {	arXiv:2406.02485},
+    journal = {Advances in Neural Information Processing Systems (NeurIPS)},
     year = {2024},
 }
 ```
